@@ -10,10 +10,10 @@ on:
     
 jobs: 
     sayHello:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         steps: 
             - name: step 1
-              run: echo Hello ${{ vars.NAME }} et $env:MY
+              run: echo Hello ${{ vars.NAME }} et $MY_VAR
             - name: step 2
-              run: dir
+              run: ls -l -a
   
