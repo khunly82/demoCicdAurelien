@@ -17,7 +17,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --force-exit --detectOpenHandles"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "devDependencies": {
 
