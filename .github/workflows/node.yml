@@ -9,12 +9,12 @@ on:
     workflow_dispatch:
     
 jobs: 
-    sayHello:
-        runs-on: ubuntu-latest
+    build_and_test:
+        runs-on: window-latest
         steps: 
             - name: show dir
-              run: ls -l -a
+              run: dir
             - name: checkout
               uses: actions/checkout@v6
             - name: show dir after checkout
-              run: ls -l -a
+              run: dir
