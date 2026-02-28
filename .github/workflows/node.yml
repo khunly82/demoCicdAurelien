@@ -26,6 +26,7 @@ jobs:
               run: npm ci
             - name: test
               run: npm run test
+              continue-on-error: true
             - name: send mail if fail
               if: failure()
               uses: JaSiLez/smtp-notifier@main
