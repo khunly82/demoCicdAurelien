@@ -25,7 +25,9 @@ jobs:
             - name: install
               run: npm ci
             - name: test
-              run: npm run test
+              run: | 
+                set -o pipefail 
+                npm run test
               continue-on-error: true
             - name: send mail if fail
               if: failure()
