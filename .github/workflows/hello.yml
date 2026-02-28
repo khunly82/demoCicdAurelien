@@ -1,5 +1,8 @@
 name: Hello World
 
+env: 
+    MY_VAR: aurélien
+
 # trigger
 on: 
     # push: { branches: [main] }
@@ -10,5 +13,5 @@ jobs:
         runs-on: windows-latest
         steps: 
             - name: step 1
-              run: echa Hello world
+              run: echo Hello ${{ vars.NAME }} et $MY_VAR
   
