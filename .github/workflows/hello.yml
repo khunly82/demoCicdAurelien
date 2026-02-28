@@ -1,0 +1,14 @@
+name: Hello World
+
+# trigger
+on: 
+    # push: { branches: [main] }
+    workflow_dispatch:
+    
+jobs: 
+    sayHello:
+        runs-on: windows-latest
+        steps: 
+            - name: step 1
+              run: echo 'Hello world'
+  
