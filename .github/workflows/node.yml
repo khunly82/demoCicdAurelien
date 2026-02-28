@@ -10,11 +10,19 @@ on:
     
 jobs: 
     build_and_test:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         steps: 
             - name: show dir
-              run: dir
+              run: ls -a -l
             - name: checkout
               uses: actions/checkout@v6
             - name: show dir after checkout
-              run: dir
+              run: ls -a -l
+            - name: setup node
+              uses: actions/setup-node@v6
+              with:
+                node-version: 24.x
+            - name: build
+              run: npm run build
+            - name: check build
+              run: npm start
