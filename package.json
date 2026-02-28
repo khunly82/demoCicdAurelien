@@ -1,0 +1,20 @@
+{
+  "name": "democicd",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/khunly82/demoCicdAurelien#readme",
+  "bugs": {
+    "url": "https://github.com/khunly82/demoCicdAurelien/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khunly82/demoCicdAurelien.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

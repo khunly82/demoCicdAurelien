@@ -1,0 +1,20 @@
+name: node
+
+env: 
+    MY_VAR: aurélien
+
+# trigger
+on: 
+    # push: { branches: [main] }
+    workflow_dispatch:
+    
+jobs: 
+    sayHello:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: show dir
+              run: ls -l -a
+            - name: checkout
+              uses: actions/checkout@v6
+            - name: show dir after checkout
+              run: ls -l -a
