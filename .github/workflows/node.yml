@@ -40,9 +40,7 @@ jobs:
                 from: aurelien@khunly.be
                 to: khun.ly@bstorm.be
             - name: build
-              if: success()
               run: npm run build
             - name: check build
-              if: success()
               run: npm start
             
