@@ -1,5 +1,22 @@
-const value: myType = 42;
+export type myType = number;
+import express from 'express';
 
-console.log(value);
+export function myFunction(): myType {
+    const value: myType = 43;
+    return value;
+}
 
-type myType = number
+const app = express();
+
+app.get('/', (_req, res) => {
+
+    const msg = `Message : ${myFunction()}`;
+
+    res.json({
+        msg
+    });
+})
+
+app.listen(8080, () => {
+    console.log(`My Web API is running ${8080}`);
+})

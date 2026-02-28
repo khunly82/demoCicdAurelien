@@ -6,14 +6,10 @@
     "outDir": "./dist",
 
     // Environment Settings
-    // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "es2024",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    // Types globaux nécessaires pour les tests Jest et l'environnement Node
+    "types": ["node", "jest"], 
 
     // Other Outputs
     "sourceMap": true,
@@ -24,7 +20,7 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    // Style Options
+    // Style Options (décommentés si tu veux plus de rigueur)
     // "noImplicitReturns": true,
     // "noImplicitOverride": true,
     // "noUnusedLocals": true,
@@ -39,6 +35,13 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
