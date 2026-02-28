@@ -13,5 +13,7 @@ jobs:
         runs-on: windows-latest
         steps: 
             - name: step 1
-              run: echo "Hello ${{ vars.NAME }} et %MY_VAR%"
+              run: echo Hello ${{ vars.NAME }} et $env:MY
+            - name: step 2
+              run: dir
   
