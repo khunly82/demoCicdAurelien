@@ -27,7 +27,7 @@ jobs:
             - name: test
               run: | 
                 set -o pipefail 
-                npm run test
+                npm test -- --ci --reporters=default --reporters=jest-junit > jest-results.log 2>&1
               continue-on-error: true
             - name: send mail if fail
               if: failure()
