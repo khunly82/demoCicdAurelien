@@ -38,4 +38,22 @@ jobs:
                 name: build
             - name: check
               run: ls -a -l api
+    deploy:
+        needs: build
+        runs-on: ubuntu-slim
+        steps: 
+            - name: download artifact
+              uses: actions/download-artifact@v8
+              with:
+                path: api
+                name: build
+            - name: deploy
+              uses: pontago/lftp-deploy-action@master
+              with:
+                protocol: sftp
+                host: ssh.alwaysdata.com
+                username: khunly
+                password: ${{ secrets.FTP_PASSWORD }}
+                local_dir: api
+                remote_dir: /home/khunly
             
