@@ -52,7 +52,7 @@ jobs:
               uses: SamKirkland/FTP-Deploy-Action@v4.3.6
               with:
                 server: ftp-khunly.alwaysdata.net
-                port: 21
+                port: 990
                 username: khunly
                 password: ${{ secrets.FTP_PASSWORD }}
                 local-dir: api/
