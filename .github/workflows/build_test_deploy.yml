@@ -39,7 +39,7 @@ jobs:
             - name: check
               run: ls -a -l api
     deploy:
-        needs: build
+        needs: check_artifact
         runs-on: ubuntu-slim
         steps: 
             - name: download artifact
@@ -48,12 +48,11 @@ jobs:
                 path: api
                 name: build
             - name: deploy
-              uses: pontago/lftp-deploy-action@master
+              uses: anvil-solutions/Fast-FTP-Action@main
               with:
-                protocol: sftp
-                host: khunly.alwaysdata.net
+                server: khunly.alwaysdata.net
                 username: khunly
                 password: ${{ secrets.FTP_PASSWORD }}
                 local_dir: api
                 remote_dir: /home/khunly
-            
+        
