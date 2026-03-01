@@ -55,6 +55,6 @@ jobs:
                 port: 21
                 username: khunly
                 password: ${{ secrets.FTP_PASSWORD }}
-                local-dir: api
-                server-dir: /home/khunly
+                local-dir: api/
+                server-dir: /home/khunly/
         
