@@ -49,12 +49,12 @@ jobs:
                 path: api
                 name: build
             - name: deploy
-              uses: anvil-solutions/Fast-FTP-Action@main
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.6
               with:
                 server: ftp-khunly.alwaysdata.net
                 port: 21
                 username: khunly
                 password: ${{ secrets.FTP_PASSWORD }}
-                local_dir: api
-                remote_dir: /home/khunly
+                local-dir: api
+                server-dir: /home/khunly
         
