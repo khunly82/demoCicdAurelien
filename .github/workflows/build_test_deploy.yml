@@ -28,7 +28,7 @@ jobs:
                 path: dist
                 name: build
     check_artifact:
-        runs-on: debian-latest
+        runs-on: ubuntu-latest
         steps: 
             - name: download artifact
               uses: actions/download-artifact@v8
