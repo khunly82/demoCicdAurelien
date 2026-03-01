@@ -51,7 +51,7 @@ jobs:
               uses: pontago/lftp-deploy-action@master
               with:
                 protocol: sftp
-                host: ssh.alwaysdata.com
+                host: khunly.alwaysdata.net
                 username: khunly
                 password: ${{ secrets.FTP_PASSWORD }}
                 local_dir: api
