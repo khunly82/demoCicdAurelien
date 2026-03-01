@@ -1,0 +1,40 @@
+name: node_build_and_deploy
+
+env: 
+    MY_VAR: aurélien
+
+# trigger
+on: 
+    # push: { branches: [main] }
+    workflow_dispatch:
+    
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: checkout
+              uses: actions/checkout@v6
+            - name: setup node
+              uses: actions/setup-node@v6
+              with:
+                node-version: 24.x
+            - name: install
+              run: npm ci
+            - name: build
+              run: npm run build
+            - name: upload artifact
+              uses: actions/upload-artifact@v7
+              with:
+                path: dist
+                name: build
+    check_artifact:
+        runs-on: debian-latest
+        steps: 
+            - name: download artifact
+              uses: actions/download-artifact@v8
+              with:
+                path: api
+                name: build
+            - name: check
+              run: ls -a -l api
+            
