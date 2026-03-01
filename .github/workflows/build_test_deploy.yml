@@ -27,19 +27,19 @@ jobs:
               with:
                 path: dist
                 name: build
-    check_artifact:
-        needs: build
-        runs-on: ubuntu-slim
-        steps: 
-            - name: download artifact
-              uses: actions/download-artifact@v8
-              with:
-                path: api
-                name: build
-            - name: check
-              run: ls -a -l api
+    # check_artifact:
+    #     needs: build
+    #     runs-on: ubuntu-slim
+    #     steps: 
+    #         - name: download artifact
+    #           uses: actions/download-artifact@v8
+    #           with:
+    #             path: api
+    #             name: build
+    #         - name: check
+    #           run: ls -a -l api
     deploy:
-        needs: check_artifact
+        # needs: check_artifact
         runs-on: ubuntu-slim
         steps: 
             - name: download artifact
