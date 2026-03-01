@@ -28,7 +28,7 @@ jobs:
                 path: dist
                 name: build
     check_artifact:
-        runs-on: ubuntu-slim-latest
+        runs-on: ubuntu-slim
         steps: 
             - name: download artifact
               uses: actions/download-artifact@v8
