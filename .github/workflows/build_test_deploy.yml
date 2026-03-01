@@ -28,6 +28,7 @@ jobs:
                 path: dist
                 name: build
     check_artifact:
+        needs: build
         runs-on: ubuntu-slim
         steps: 
             - name: download artifact
