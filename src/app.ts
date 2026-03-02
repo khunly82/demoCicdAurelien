@@ -1,7 +1,8 @@
 export type myType = number;
 import express from 'express';
 
-const port = process.env.PORT || 8080;
+const port = Number(process.env.PORT) || 8080;
+const host = process.env.IP || '::';
 
 export function myFunction(): myType {
     const value: myType = 43;
@@ -19,6 +20,6 @@ app.get('/', (_req, res) => {
     });
 })
 
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log(`My Web API is running ${port}`);
 })
