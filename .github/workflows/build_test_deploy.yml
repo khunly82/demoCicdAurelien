@@ -30,19 +30,7 @@ jobs:
             package.json
             package-lock.json
           name: build
-  # check_artifact:
-  #     needs: build
-  #     runs-on: ubuntu-slim
-  #     steps:
-  #         - name: download artifact
-  #           uses: actions/download-artifact@v8
-  #           with:
-  #             path: api
-  #             name: build
-  #         - name: check
-  #           run: ls -a -l api
   deploy:
-    # needs: check_artifact
     needs: build-fucking-step
     runs-on: ubuntu-latest
     steps:
@@ -61,6 +49,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local_path: ./api/*
           remote_path: /home/khunly
+  install:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
       - name: Install Node Module
         uses: appleboy/ssh-action@v1
         with:
@@ -70,16 +62,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           script: |
             npm ci --production
-  restart:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Restart AlwaysData Server
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ssh-khunly.alwaysdata.net
-          port: 22
-          username: khunly
-          password: ${{ secrets.FTP_PASSWORD }}
-          script: |
-            systemctl restart khunly
