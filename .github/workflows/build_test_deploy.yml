@@ -62,4 +62,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           script: |
             npm ci --production
-            pkill -9 -f "node dist/app.js"
