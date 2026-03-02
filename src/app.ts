@@ -13,7 +13,7 @@ const app = express();
 
 app.get('/', (_req, res) => {
 
-    const msg = `Message : ${myFunction()}`;
+    const msg = `Final message of death : ${myFunction()}`;
 
     res.json({
         msg
