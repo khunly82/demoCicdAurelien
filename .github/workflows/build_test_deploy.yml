@@ -48,13 +48,14 @@ jobs:
               with:
                 path: api
                 name: build
-            - name: deploy
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+           
+            - name: Deploy to Server
+              uses: wlixcc/SFTP-Deploy-Action@v1.2.6
               with:
+                username: khunly
                 server: ssh-khunly.alwaysdata.net
                 port: 22
-                username: khunly
                 password: ${{ secrets.FTP_PASSWORD }}
-                local-dir: api/
-                server-dir: /home/khunly/
+                local_path: ./api/*
+                remote_path: /home/khunly
         
