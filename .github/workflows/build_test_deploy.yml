@@ -82,4 +82,4 @@ jobs:
           username: khunly
           password: ${{ secrets.FTP_PASSWORD }}
           script: |
-            systemctl restart node-app
+            asd app restart khunly
