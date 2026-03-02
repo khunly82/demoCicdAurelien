@@ -1,7 +1,7 @@
 export type myType = number;
 import express from 'express';
 
-const port = Number(process.env.PORT) || 8080;
+const port = Number(process.env.PORT) || 8100;
 const host = process.env.IP || '::';
 
 export function myFunction(): myType {
